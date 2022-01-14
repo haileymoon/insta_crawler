@@ -19,11 +19,11 @@ driver = webdriver.Chrome(options=options)
 def login():
     flag = False
     try:
-        id_space = WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.NAME, 'username')))
+        id_space = WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.NAME, config['NAME']['user_name'])))
         id_space.send_keys(config["LOGIN_KEY"]["instagram_id"])
         time.sleep(2)
 
-        pwd_space = WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.NAME, 'password')))
+        pwd_space = WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.NAME, config['NAME']['password'])))
         pwd_space.send_keys(config["LOGIN_KEY"]["instagram_pwd"])
         time.sleep(2)
 
